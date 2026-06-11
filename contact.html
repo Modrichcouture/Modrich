@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Modrich Couture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { 
+            theme: { 
+                extend: { 
+                    colors: { 
+                        gold: { DEFAULT: '#bfa36c', dark: '#967b4c' }, 
+                        cream: '#fcfaf2' 
+                    }, 
+                    fontFamily: { 
+                        serif: ['Cinzel', 'serif'], 
+                        sans: ['Montserrat', 'sans-serif'] 
+                    } 
+                } 
+            } 
+        }
+    </script>
+</head>
+<body class="font-sans text-gray-800 bg-gradient-to-b from-white to-[#f7f4eb] min-h-screen flex flex-col justify-between">
+    
+   <!-- LUXURY INTERACTIVE NAVIGATION HEADER -->
+    <header class="bg-white/90 backdrop-blur-sm border-b border-gold-light/30 sticky top-0 z-50 px-6 py-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center relative">
+            
+            <!-- LOGO & COMPANY NAME (Top Left) -->
+            <div class="flex items-center">
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <!-- Logo Image -->
+                    <img src="logo.png" alt="Modrich Couture Logo" class="w-12 h-12 object-contain transition-transform duration-300 group-hover:scale-105">
+                    
+                    <!-- Company Name Text Block -->
+                    <div class="flex flex-col justify-center border-l border-gold-light/40 pl-3">
+                        <span class="font-serif text-sm md:text-base tracking-[0.2em] text-neutral-800 uppercase font-semibold leading-none">
+                            Modrich
+                        </span>
+                        <span class="font-sans text-[9px] md:text-[10px] tracking-[0.3em] text-gold-dark uppercase font-medium mt-1 leading-none">
+                            Couture
+                        </span>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- DESKTOP NAVIGATION (Hidden on phones) -->
+            <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-widest text-gray-600">
+                <a href="index.html" class="hover:text-gold transition duration-300 pb-1">HOME</a>
+                <a href="about.html" class="hover:text-gold transition duration-300 pb-1">ABOUT</a>
+                <a href="heritage.html" class="hover:text-gold transition duration-300 pb-1">OUR HERITAGE</a>
+                <a href="contact.html" class="hover:text-gold transition duration-300 pb-1">CONTACT</a>
+            </nav>
+
+            <!-- MOBILE HAMBURGER BUTTON (Only shows on phones) -->
+            <button id="menu-btn" class="md:hidden text-gold text-2xl font-bold p-2 focus:outline-none select-none" aria-label="Toggle Menu">
+                ☰
+            </button>
+
+            <!-- MOBILE DROPDOWN DRAWER PANEL -->
+            <div id="mobile-menu" class="hidden absolute top-16 left-0 right-0 bg-white/95 border-b border-gold-light/30 flex flex-col items-center space-y-5 py-6 shadow-xl z-50 md:hidden font-medium tracking-[0.2em] text-sm text-gray-600 rounded-b-xl backdrop-blur-sm">
+                <a href="index.html" class="hover:text-gold py-1 w-full text-center">HOME</a>
+                <a href="about.html" class="hover:text-gold py-1 w-full text-center">ABOUT</a>
+                <a href="heritage.html" class="hover:text-gold py-1 w-full text-center">OUR HERITAGE</a>
+                <a href="contact.html" class="hover:text-gold py-1 w-full text-center">CONTACT</a>
+            </div>
+        </div>
+
+        <!-- TOGGLE SCRIPT -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const menuBtn = document.getElementById('menu-btn');
+                const mobileMenu = document.getElementById('mobile-menu');
+
+                menuBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                document.addEventListener('click', () => {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+        </script>
+    </header>
+    <!-- Main Content Grid -->
+    <main class="flex-grow max-w-6xl mx-auto px-6 py-12 md:py-20 w-full">
+        <h1 class="font-serif text-4xl tracking-widest text-gray-700 uppercase text-center mb-12">Connect with Us</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            
+            <!-- Left Side: Information & Description -->
+            <div class="space-y-8 text-left md:pr-6">
+                <div>
+                    <h2 class="font-serif text-xl tracking-wider text-gray-700 uppercase mb-3 border-b border-gold/30 pb-2">Visit Our Store</h2>
+                    <p class="text-gray-600 tracking-wider leading-relaxed text-sm">
+                        Experience the texture of premium fabrics firsthand. We invite you to explore our curated collections of bespoke gents' shirts, luxury trousers, and traditional attire at our boutique. Our style consultants are ready to assist you in redefining your wardrobe.
+                    </p>
+                </div>
+
+                <div class="space-y-4 tracking-wider text-sm">
+                    <div>
+                        <h3 class="text-xs text-gold font-medium uppercase tracking-widest mb-1">Address</h3>
+                        <p class="text-gray-700 font-medium">Joel Plaza, Pallikavala, Kattappana,</p>
+                        <p class="text-gray-700 font-medium">Kerala, India</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xs text-gold font-medium uppercase tracking-widest mb-1">Call Us</h3>
+                        <p class="text-gray-800 font-medium">Phone: +91 7306424186</p> 
+                    </div>
+
+                    <div>
+                        <h3 class="text-xs text-gold font-medium uppercase tracking-widest mb-1">Email</h3>
+                        <p class="text-gray-800 font-medium">info@modrichcouture.com</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xs text-gold font-medium uppercase tracking-widest mb-1">Follow Us</h3>
+                        <a href="https://instagram.com/couturemodrich" target="_blank" class="text-gray-800 font-medium hover:text-gold transition flex items-center gap-1">
+                            Instagram:@Modrich_couture
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Google Maps -->
+            <div class="w-full h-[350px] md:h-[450px] bg-white p-2 border border-gold/20 shadow-md rounded-sm">
+                <!-- Replace the URL inside the src="" parameter below with your exact custom Google Maps embed share-link if needed -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3932.2286147937343!2d77.11236257407471!3d9.7466927773441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07a90059a7ad81%3A0xe4782909b28fe33c!2sModrich%20Couture!5e0!3m2!1sen!2sin!4v1780860648108!5m2!1sen!2sin"
+                    class="w-full h-full border-0" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#dcd1ba] py-4 text-center text-xs tracking-widest text-gray-600 uppercase">
+        Copyright © 2025 modrichcouture.com
+    </footer>
+
+</body>
+</html>

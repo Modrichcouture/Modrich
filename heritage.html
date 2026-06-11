@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Heritage | Modrich Couture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { theme: { extend: { colors: { gold: { DEFAULT: '#bfa36c', dark: '#967b4c' }, cream: '#fcfaf2' }, fontFamily: { serif: ['Cinzel', 'serif'], sans: ['Montserrat', 'sans-serif'] } } } }
+    </script>
+</head>
+<body class="font-sans text-gray-800 bg-gradient-to-b from-white to-[#f7f4eb] min-h-screen flex flex-col justify-between">
+    
+  <!-- LUXURY INTERACTIVE NAVIGATION HEADER -->
+    <header class="bg-white/90 backdrop-blur-sm border-b border-gold-light/30 sticky top-0 z-50 px-6 py-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center relative">
+            
+            <!-- LOGO & COMPANY NAME (Top Left) -->
+            <div class="flex items-center">
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <!-- Logo Image -->
+                    <img src="logo.png" alt="Modrich Couture Logo" class="w-12 h-12 object-contain transition-transform duration-300 group-hover:scale-105">
+                    
+                    <!-- Company Name Text Block -->
+                    <div class="flex flex-col justify-center border-l border-gold-light/40 pl-3">
+                        <span class="font-serif text-sm md:text-base tracking-[0.2em] text-neutral-800 uppercase font-semibold leading-none">
+                            Modrich
+                        </span>
+                        <span class="font-sans text-[9px] md:text-[10px] tracking-[0.3em] text-gold-dark uppercase font-medium mt-1 leading-none">
+                            Couture
+                        </span>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- DESKTOP NAVIGATION (Hidden on phones) -->
+            <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-widest text-gray-600">
+                <a href="index.html" class="hover:text-gold transition duration-300 pb-1">HOME</a>
+                <a href="about.html" class="hover:text-gold transition duration-300 pb-1">ABOUT</a>
+                <a href="heritage.html" class="hover:text-gold transition duration-300 pb-1">OUR HERITAGE</a>
+                <a href="contact.html" class="hover:text-gold transition duration-300 pb-1">CONTACT</a>
+            </nav>
+
+            <!-- MOBILE HAMBURGER BUTTON (Only shows on phones) -->
+            <button id="menu-btn" class="md:hidden text-gold text-2xl font-bold p-2 focus:outline-none select-none" aria-label="Toggle Menu">
+                ☰
+            </button>
+
+            <!-- MOBILE DROPDOWN DRAWER PANEL -->
+            <div id="mobile-menu" class="hidden absolute top-16 left-0 right-0 bg-white/95 border-b border-gold-light/30 flex flex-col items-center space-y-5 py-6 shadow-xl z-50 md:hidden font-medium tracking-[0.2em] text-sm text-gray-600 rounded-b-xl backdrop-blur-sm">
+                <a href="index.html" class="hover:text-gold py-1 w-full text-center">HOME</a>
+                <a href="about.html" class="hover:text-gold py-1 w-full text-center">ABOUT</a>
+                <a href="heritage.html" class="hover:text-gold py-1 w-full text-center">OUR HERITAGE</a>
+                <a href="contact.html" class="hover:text-gold py-1 w-full text-center">CONTACT</a>
+            </div>
+        </div>
+
+        <!-- TOGGLE SCRIPT -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const menuBtn = document.getElementById('menu-btn');
+                const mobileMenu = document.getElementById('mobile-menu');
+
+                menuBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                document.addEventListener('click', () => {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+        </script>
+    </header>
+
+    <!-- PRODUCT GALLERY MAIN SECTION -->
+    <main class="flex-grow max-w-6xl mx-auto px-6 py-12 md:py-16 text-center w-full">
+        <!-- Section Title -->
+        <h1 class="font-serif text-3xl md:text-4xl tracking-widest text-gray-700 uppercase mb-3">
+         Collection
+        </h1>
+        <p class="text-xs tracking-[0.2em] text-gold-dark uppercase font-medium mb-12">Curated Premium Men's Apparel</p>
+
+        <!-- Product Image Collection Grid (3 Columns on Desktop, 1 on Mobile) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            
+            <!-- Product item 1: Shirts -->
+            <div class="group bg-white border border-neutral-200/60 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                <div class="h-80 w-full overflow-hidden bg-neutral-100">
+                    <img src="product-innerwear.jpeg" alt="Premium Branded Shirts" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-4 border-t border-neutral-100 bg-white">
+                    <h3 class="font-serif text-sm tracking-widest uppercase text-gray-800 font-semibold">Levi’s</h3>
+                </div>
+            </div>
+
+            <!-- Product item 2: Trousers / Chinos -->
+            <div class="group bg-white border border-neutral-200/60 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                <div class="h-80 w-full overflow-hidden bg-neutral-100">
+                    <img src="product-fabrics.jpeg" alt="Formal & Casual Trousers" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-4 border-t border-neutral-100 bg-white">
+                    <h3 class="font-serif text-sm tracking-widest uppercase text-gray-800 font-semibold">Allen Solly</h3>
+                </div>
+            </div>
+
+            <!-- Product item 3: Denims -->
+            <div class="group bg-white border border-neutral-200/60 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                <div class="h-80 w-full overflow-hidden bg-neutral-100">
+                    <img src="product-tshirts.jpeg" alt="Premium Denims" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-4 border-t border-neutral-100 bg-white">
+                    <h3 class="font-serif text-sm tracking-widest uppercase text-gray-800 font-semibold">Louis Philippe</h3>
+                </div>
+            </div>
+
+            <!-- Product item 4: T-Shirts -->
+            <div class="group bg-white border border-neutral-200/60 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                <div class="h-80 w-full overflow-hidden bg-neutral-100">
+                    <img src="product-denims.jpeg" alt="Casual T-Shirts" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-4 border-t border-neutral-100 bg-white">
+                    <h3 class="font-serif text-sm tracking-widest uppercase text-gray-800 font-semibold">Rare Rabbit</h3>
+                </div>
+            </div>
+
+            <!-- Product item 5: Exclusive Fabrics -->
+            <div class="group bg-white border border-neutral-200/60 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                <div class="h-80 w-full overflow-hidden bg-neutral-100">
+                    <img src="product-trousers.jpeg" alt="Export Quality Fabrics" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-4 border-t border-neutral-100 bg-white">
+                    <h3 class="font-serif text-sm tracking-widest uppercase text-gray-800 font-semibold">Peter England</h3>
+                </div>
+            </div>
+
+            <!-- Product item 6: Innerwear & Comfort -->
+            <div class="group bg-white border border-neutral-200/60 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                <div class="h-80 w-full overflow-hidden bg-neutral-100">
+                    <img src="product-shirts.jpeg" alt="Premium Innerwear" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-4 border-t border-neutral-100 bg-white">
+                    <h3 class="font-serif text-sm tracking-widest uppercase text-gray-800 font-semibold">Refined Fits</h3>
+                </div>
+            </div>
+
+            <!-- Product item 7: Innerwear & Comfort -->
+            <div class="group bg-white border border-neutral-200/60 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                <div class="h-80 w-full overflow-hidden bg-neutral-100">
+                    <img src="product-pants.jpeg" alt="Casual T-Shirts" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-4 border-t border-neutral-100 bg-white">
+                    <h3 class="font-serif text-sm tracking-widest uppercase text-gray-800 font-semibold">Modern Classics</h3>
+                </div>
+            </div>
+
+           <!-- Product item 8: Exclusive Fabrics -->
+            <div class="group bg-white border border-neutral-200/60 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                <div class="h-80 w-full overflow-hidden bg-neutral-100">
+                    <img src="product-mundu.jpg" alt="Export Quality Fabrics" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-4 border-t border-neutral-100 bg-white">
+                    <h3 class="font-serif text-sm tracking-widest uppercase text-gray-800 font-semibold">Woven Elegance</h3>
+           </div>
+            </div>
+
+            <!-- Product item 6: Innerwear & Comfort -->
+            <div class="group bg-white border border-neutral-200/60 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+                <div class="h-80 w-full overflow-hidden bg-neutral-100">
+                    <img src="product-colour.jpeg" alt="Premium Innerwear" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                </div>
+                <div class="p-4 border-t border-neutral-100 bg-white">
+                    <h3 class="font-serif text-sm tracking-widest uppercase text-gray-800 font-semibold">Premium Weaves</h3>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- CALL TO ACTION BUTTON -->
+        <div class="pt-4 border-t border-neutral-200 max-w-xl mx-auto">
+            <a href="contact.html" class="inline-block bg-neutral-900 hover:bg-gold text-white font-sans text-xs font-bold tracking-[0.2em] uppercase px-8 py-4 rounded-md shadow-md hover:shadow-lg transition-all duration-300 transform active:scale-95">
+                View More At Our Store
+            </a>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#dcd1ba] py-4 text-center text-xs tracking-widest text-gray-600 uppercase border-t border-gray-300/20">
+        Copyright © 2025 modrichcouture.com
+    </footer>
+
+</body>
+</html>

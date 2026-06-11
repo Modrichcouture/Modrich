@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modrich Couture | Excellence in Apparel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            light: '#dfc79b',
+                            DEFAULT: '#bfa36c',
+                            dark: '#967b4c',
+                        },
+                        cream: '#fcfaf2',
+                        cardBg: 'rgba(255, 255, 255, 0.85)'
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background: linear-gradient(180deg, #ffffff 0%, #f7f4eb 50%, #e8dec9 100%);
+        }
+        .hero-bg {
+            background: radial-gradient(circle, #ffffff 0%, #fbf9f3 70%, #f3ede0 100%);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- LUXURY INTERACTIVE NAVIGATION HEADER -->
+    <header class="bg-white/90 backdrop-blur-sm border-b border-gold-light/30 sticky top-0 z-50 px-6 py-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center relative">
+            
+            <!-- LOGO & COMPANY NAME (Top Left) -->
+            <div class="flex items-center">
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <!-- Logo Image -->
+                    <img src="logo.png" alt="Modrich Couture Logo" class="w-12 h-12 object-contain transition-transform duration-300 group-hover:scale-105">
+                    
+                    <!-- Company Name Text Block -->
+                    <div class="flex flex-col justify-center border-l border-gold-light/40 pl-3">
+                        <span class="font-serif text-sm md:text-base tracking-[0.2em] text-neutral-800 uppercase font-semibold leading-none">
+                            Modrich
+                        </span>
+                        <span class="font-sans text-[9px] md:text-[10px] tracking-[0.3em] text-gold-dark uppercase font-medium mt-1 leading-none">
+                            Couture
+                        </span>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- DESKTOP NAVIGATION (Hidden on phones) -->
+            <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-widest text-gray-600">
+                <a href="index.html" class="hover:text-gold transition duration-300 pb-1">HOME</a>
+                <a href="about.html" class="hover:text-gold transition duration-300 pb-1">ABOUT</a>
+                <a href="heritage.html" class="hover:text-gold transition duration-300 pb-1">OUR HERITAGE</a>
+                <a href="contact.html" class="hover:text-gold transition duration-300 pb-1">CONTACT</a>
+            </nav>
+
+            <!-- MOBILE HAMBURGER BUTTON (Only shows on phones) -->
+            <button id="menu-btn" class="md:hidden text-gold text-2xl font-bold p-2 focus:outline-none select-none" aria-label="Toggle Menu">
+                ☰
+            </button>
+
+            <!-- MOBILE DROPDOWN DRAWER PANEL -->
+            <div id="mobile-menu" class="hidden absolute top-16 left-0 right-0 bg-white/95 border-b border-gold-light/30 flex flex-col items-center space-y-5 py-6 shadow-xl z-50 md:hidden font-medium tracking-[0.2em] text-sm text-gray-600 rounded-b-xl backdrop-blur-sm">
+                <a href="index.html" class="hover:text-gold py-1 w-full text-center">HOME</a>
+                <a href="about.html" class="hover:text-gold py-1 w-full text-center">ABOUT</a>
+                <a href="heritage.html" class="hover:text-gold py-1 w-full text-center">OUR HERITAGE</a>
+                <a href="contact.html" class="hover:text-gold py-1 w-full text-center">CONTACT</a>
+            </div>
+        </div>
+
+        <!-- TOGGLE SCRIPT -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const menuBtn = document.getElementById('menu-btn');
+                const mobileMenu = document.getElementById('mobile-menu');
+
+                menuBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                document.addEventListener('click', () => {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+        </script>
+    </header>
+
+    <main class="flex-grow hero-bg relative px-4 py-12 flex flex-col items-center justify-center text-center">
+        
+        <div class="mb-6 flex justify-center">
+            <img src="logo.png" alt="Modrich Couture Emblem" class="w-36 h-36 md:w-48 md:h-48 object-contain drop-shadow-xl">
+        </div>
+        
+        <h1 class="font-serif text-3xl md:text-5xl lg:text-6xl tracking-widest text-gray-700 uppercase font-medium">
+            Modrich Couture
+        </h1>
+        <p class="text-xs md:text-sm tracking-[0.3em] text-gray-900 uppercase font-semibold mt-4">
+            Excellence in Apparel Since 2025
+        </p>
+        <p class="text-sm md:text-base tracking-[0.5em] text-gray-700 uppercase font-medium mt-2 mb-12">
+            Kattappana
+        </p>
+
+        <!-- ================= BRAND & VALUES CONTAINER ================= -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-6xl mx-auto px-4 mb-12">
+            
+            <!-- 1. OUR BRANDS CARD -->
+            <div class="bg-white/80 border border-neutral-200/60 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.03)] backdrop-blur-md p-8 md:p-10 flex flex-col justify-between">
+                <div class="w-full">
+                    <!-- Header with Minimal Geometric Underline Accent -->
+                    <div class="text-center mb-8">
+                        <h2 class="font-serif text-lg md:text-xl tracking-[0.25em] text-neutral-800 uppercase font-medium">
+                            Our Brands
+                        </h2>
+                        <div class="w-12 h-[1px] bg-gold mx-auto mt-3"></div>
+                    </div>
+                    
+                    <!-- Clean, Uniform High-End Grid Presentation -->
+                    <div class="grid grid-cols-3 sm:grid-cols-4 gap-x-4 gap-y-7 items-center justify-items-center text-center">
+                        <div class="font-sans text-[11px] md:text-xs tracking-wider text-neutral-600 uppercase font-medium hover:text-gold transition-colors duration-300 cursor-default">American Eagle</div>
+                        <div class="font-serif text-[12px] md:text-sm tracking-wide text-neutral-700 italic font-semibold hover:text-gold transition-colors duration-300 cursor-default">Rare Rabbit</div>
+                        <div class="font-sans text-[11px] md:text-xs tracking-tight text-neutral-800 uppercase font-bold hover:text-gold transition-colors duration-300 cursor-default">Pepe Jeans</div>
+                        <div class="font-serif text-[13px] md:text-base tracking-wide text-neutral-800 font-bold hover:text-gold transition-colors duration-300 cursor-default">Lee</div>
+                        <div class="font-sans text-[11px] md:text-xs tracking-[0.15em] text-neutral-600 uppercase font-semibold hover:text-gold transition-colors duration-300 cursor-default">Wrangler</div>
+                        <div class="font-sans text-[12px] md:text-sm tracking-tighter text-neutral-900 uppercase font-black hover:text-gold transition-colors duration-300 cursor-default">Wrogn</div>
+                        <div class="font-sans text-[10px] md:text-[11px] tracking-widest text-neutral-500 uppercase italic font-bold hover:text-gold transition-colors duration-300 cursor-default">Flying Machine</div>
+                        <div class="font-serif text-[13px] md:text-base tracking-tighter text-neutral-900 font-black hover:text-gold transition-colors duration-300 cursor-default">Levi’s</div>
+                        <div class="font-serif text-[11px] md:text-xs tracking-widest text-neutral-600 uppercase hover:text-gold transition-colors duration-300 cursor-default">Simon Carter</div>
+                        <div class="font-sans text-[11px] md:text-xs tracking-wide text-neutral-700 uppercase font-medium hover:text-gold transition-colors duration-300 cursor-default">Being Human</div>
+                        <div class="font-sans text-[11px] md:text-xs tracking-[0.2em] text-neutral-800 uppercase font-bold hover:text-gold transition-colors duration-300 cursor-default">U.S. POLO</div>
+                        <div class="font-sans text-[11px] md:text-xs tracking-tighter text-neutral-600 uppercase font-semibold hover:text-gold transition-colors duration-300 cursor-default">Allen Solly</div>
+                        <div class="font-serif text-[11px] md:text-xs tracking-wide text-neutral-600 font-medium hover:text-gold transition-colors duration-300 cursor-default">Peter England</div>
+                        <div class="font-sans text-[11px] md:text-xs tracking-[0.05em] text-neutral-900 uppercase font-bold leading-none">Louis Philippe</div>
+                        <div class="font-serif text-[12px] md:text-sm tracking-wide text-neutral-800 font-bold border-b border-neutral-300 pb-0.5">Linen Club®</div>
+                        <div class="font-serif text-[12px] md:text-sm tracking-wide text-neutral-600 italic hover:text-gold transition-colors duration-300 cursor-default">Bear House</div>
+                        <div class="font-sans text-[11px] md:text-xs tracking-normal text-neutral-600 uppercase font-medium hover:text-gold transition-colors duration-300 cursor-default">Indian Terrain</div>
+                        <div class="font-sans text-[11px] md:text-xs tracking-[0.15em] text-neutral-800 uppercase font-bold hover:text-gold transition-colors duration-300 cursor-default">Blackberrys</div>
+                        <div class="font-sans text-[12px] md:text-sm tracking-[0.2em] text-neutral-700 font-bold">V-STAR</div>
+                        <div class="font-sans text-[11px] md:text-xs tracking-[0.15em] text-neutral-900 font-extrabold">JOCKEY</div>
+                        <div class="font-sans text-[13px] md:text-base tracking-tighter text-neutral-800 font-black hover:text-gold transition-colors duration-300 cursor-default">MCR</div>
+                        <div class="font-serif text-[12px] md:text-sm tracking-widest text-neutral-700 uppercase font-semibold hover:text-gold transition-colors duration-300 cursor-default">Ramraj</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. BRAND VALUES CARD -->
+            <div class="bg-white/80 border border-neutral-200/60 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.03)] backdrop-blur-md p-8 md:p-10 flex flex-col justify-between">
+                <div class="w-full h-full flex flex-col justify-between">
+                    <!-- Header with Minimal Geometric Underline Accent -->
+                    <div class="text-center mb-10">
+                        <h2 class="font-serif text-lg md:text-xl tracking-[0.25em] text-neutral-800 uppercase font-medium">
+                            Brand Values
+                        </h2>
+                        <div class="w-12 h-[1px] bg-gold mx-auto mt-3"></div>
+                    </div>
+                    
+                    <!-- Clean, Asymmetrical 2-Column Editorial Grid with Center Border -->
+                    <div class="grid grid-cols-2 gap-x-8 gap-y-12 w-full my-auto relative">
+                        <!-- Soft Center Vertical Divider Line -->
+                        <div class="absolute left-1/2 top-0 bottom-0 w-[1px] bg-neutral-200/60 -translate-x-1/2 hidden sm:block"></div>
+                        
+                        <!-- Value 1 -->
+                        <div class="flex flex-col items-center text-center px-2 group">
+                            <div class="w-8 h-8 rounded-full bg-neutral-50 flex items-center justify-center mb-3 group-hover:bg-cream border border-neutral-100 transition-colors duration-300">
+                                <span class="text-gold-dark text-xs font-serif">I</span>
+                            </div>
+                            <h3 class="font-serif text-xs md:text-sm tracking-[0.2em] text-neutral-800 uppercase font-semibold">
+                                Premium Quality
+                            </h3>
+                            <p class="text-[10px] md:text-xs text-neutral-400 tracking-[0.1em] mt-1.5 uppercase font-medium">
+                                Handpicked Excellence
+                            </p>
+                        </div>
+
+                        <!-- Value 2 -->
+                        <div class="flex flex-col items-center text-center px-2 group">
+                            <div class="w-8 h-8 rounded-full bg-neutral-50 flex items-center justify-center mb-3 group-hover:bg-cream border border-neutral-100 transition-colors duration-300">
+                                <span class="text-gold-dark text-xs font-serif">II</span>
+                            </div>
+                            <h3 class="font-serif text-xs md:text-sm tracking-[0.2em] text-neutral-800 uppercase font-semibold">
+                                Craftsmanship
+                            </h3>
+                            <p class="text-[10px] md:text-xs text-neutral-400 tracking-[0.1em] mt-1.5 uppercase font-medium">
+                                Tailored Perfection
+                            </p>
+                        </div>
+
+                        <!-- Value 3 -->
+                        <div class="flex flex-col items-center text-center px-2 group">
+                            <div class="w-8 h-8 rounded-full bg-neutral-50 flex items-center justify-center mb-3 group-hover:bg-cream border border-neutral-100 transition-colors duration-300">
+                                <span class="text-gold-dark text-xs font-serif">III</span>
+                            </div>
+                            <h3 class="font-serif text-xs md:text-sm tracking-[0.2em] text-neutral-800 uppercase font-semibold">
+                                Sustainability
+                            </h3>
+                            <p class="text-[10px] md:text-xs text-neutral-400 tracking-[0.1em] mt-1.5 uppercase font-medium">
+                                Conscious Fashion
+                            </p>
+                        </div>
+
+                        <!-- Value 4 -->
+                        <div class="flex flex-col items-center text-center px-2 group">
+                            <div class="w-8 h-8 rounded-full bg-neutral-50 flex items-center justify-center mb-3 group-hover:bg-cream border border-neutral-100 transition-colors duration-300">
+                                <span class="text-gold-dark text-xs font-serif">IV</span>
+                            </div>
+                            <h3 class="font-serif text-xs md:text-sm tracking-[0.2em] text-neutral-800 uppercase font-semibold">
+                                Our Heritage
+                            </h3>
+                            <p class="text-[10px] md:text-xs text-neutral-400 tracking-[0.1em] mt-1.5 uppercase font-medium">
+                                Trusted Since 2025
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- NEWLY ADDED CONNECTING ABOUT US BUTTON SECTION -->
+        <div class="w-full max-w-xl mx-auto mb-12">
+            <a href="about.html" class="inline-block bg-neutral-900 hover:bg-gold text-white font-sans text-xs font-bold tracking-[0.2em] uppercase px-10 py-4 rounded-md shadow-md hover:shadow-lg transition-all duration-300 transform active:scale-95">
+                Learn More About Us
+            </a>
+        </div>
+
+        <!-- CONTACT / STORE FOOTPRINT -->
+        <section class="w-full max-w-3xl mx-auto border-t border-gold-light/20 pt-8 mt-4">
+            <a href="contact.html" class="inline-block text-xs tracking-[0.2em] font-bold text-gold-dark hover:text-gold transition duration-300 uppercase border-b border-gold-dark/40 pb-0.5 mb-3">
+                Visit Our Store
+            </a>
+            <p class="text-xs md:text-sm tracking-wider text-gray-600 max-w-xl mx-auto leading-relaxed">
+                Address: Joel Plaza, Pallikavala, Kattappana
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#dcd1ba] py-4 text-center text-[10px] md:text-xs tracking-widest text-gray-600 uppercase border-t border-gray-300/30">
+        Copyright © 2025 modrichcouture.com
+    </footer>
+
+</body>
+</html>
